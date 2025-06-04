@@ -139,13 +139,10 @@
                 <h3 class="project-wrapper__text-title">Overview</h3>
                 <div>
                   <p class="mb-4">
-                    A job aggregation web application built to showcase production-ready full-stack skills.  
+                    JobHuntX is a job information aggregation application that collects job postings from multiple sources such as public APIs, RSS feeds, and websites, and enables efficient job search.
                   </p>
                   <p class="mb-4">
                     🔧 Tech Stack: ASP.NET Core, React, TypeScript, Docker  
-                  </p>
-                  <p class="mb-4">
-                    🎯 Goal: Demonstrate ability to build scalable, testable, and maintainable systems
                   </p>
                 </div>
                 <a
@@ -188,40 +185,78 @@
           </div>
           <!-- /END Overview -->
           
-          <!-- Motivation & Problem -->
+          <!-- Situation & Task -->
           <div class="row">
             <div class="col-12">
               <div class="project-wrapper__text load-hidden">
                 <h3 class="project-wrapper__text-title">Why I built JobHuntX</h3>
                 <div>
                   <p class="mb-4">
-                    - I wanted to solve my own problem and build a tool tailored for real use
+                    After moving to Australia, I faced difficulty finding jobs suitable for skilled migration (subclass 190/491). Most job boards lacked filtering for PR pathways.
                   </p>
                   <p class="mb-4">
-                    - At the same time, I used this opportunity to demonstrate my development skills
+                    I decided to create my own tool that scrapes and aggregates job listings with customizable filters to assist in my search—and to showcase my abilities to employers.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- /END Motivation & Problem -->
+          <!-- /END Situation & Task -->
 
-          <!-- System Architecture -->
+          <!-- Key Features & Technical Highlights -->
+          <div class="row">
+            <div class="col-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Key Features</h3>
+                <div>
+                  <p class="mb-4">
+                    - To flexibly and extensibly handle multiple job sites and APIs, I designed concrete implementations (RSS, API, scraping) that inherit from an abstract job source handler.
+                  </p>
+                  <p class="mb-4">
+                    - To improve the performance of external data retrieval and reduce API load, I introduced caching using IMemoryCache.
+                  </p>
+                  <p class="mb-4">
+                    - To efficiently identify the cause of issues and streamline maintenance, I implemented centralized error handling and logging.
+                  </p>
+                  <p class="mb-4">
+                    - To prevent data integration errors between backend and frontend and improve development efficiency, I designed a type-safe frontend API using NSwag.
+                  </p>
+                  <p class="mb-4">
+                    - To ensure quality and enable safe future feature additions and refactoring, I support CI using unit tests (xUnit / Vitest) and GitHub Actions.
+                  </p>
+                  <p class="mb-4">
+                    - To automate deployment to production and reduce operational costs, I support CD using Docker and Render.
+                  </p>
+                  <p class="mb-4">
+                    - To enable consistent development environments for myself or any future team members, I unified the development environment using Docker Compose.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /END Key Features & Technical Highlights -->
+
+          <!-- Backend Architecture -->
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">System Architecture(Backend?)</h3>
+                <h3 class="project-wrapper__text-title">Backend Architecture</h3>
                 <div>
                   <p class="mb-4">
-                    - Backend: ASP.NET Core Web API (C#)
+                    This application organizes backend data retrieval and processing logic using the "Handler" pattern.
                   </p>
                   <p class="mb-4">
-                    - Frontend: React + TypeScript
-                  </p>
-                  <p class="mb-4">
-                    - Data Sources: RSS, Public APIs, Web scraping
+                    🔧 Tech Stack: ASP.NET Core, xUnit, NSwag  
                   </p>
                 </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/ryotaro-tanaka/jobhuntx?tab=readme-ov-file#backend"
+                >
+                  Details
+                </a>
               </div>
             </div>
             <div class="col-lg-8 col-sm-12">
@@ -244,43 +279,52 @@
               </div>
             </div>
           </div>
-          <!-- /END System Architecture -->
-
-          <!-- Key Features & Technical Highlights -->
+          <!-- /END Backend Architecture -->
+           
+          <!-- Frontend Architecture -->
           <div class="row">
-            <div class="col-12">
+            <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Key Features</h3>
+                <h3 class="project-wrapper__text-title">Frontend Architecture</h3>
                 <div>
                   <p class="mb-4">
-                    - Unified handler pattern for job sources (abstract handler + concrete handlers)
+                    The frontend is structured using a combination of the "Container/Presentational pattern" and "state management with Hooks + Context". The main goal is to achieve separation of concerns, improving readability and scalability.
                   </p>
                   <p class="mb-4">
-                    - Caching optimization using IMemoryCache
-                  </p>
-                  <p class="mb-4">
-                    - Centralized error handling and logging
-                  </p>
-                  <p class="mb-4">
-                    - Type-safe frontend API with NSwag
-                  </p>
-                  <p class="mb-4">
-                    - Automated testing for frontend and backend
-                  </p>
-                  <p class="mb-4">
-                    - CI support using GitHub Actions
-                  </p>
-                  <p class="mb-4">
-                    - CD support using Docker and the hosting service Render
-                  </p>
-                  <p class="mb-4">
-                    - Unified development environment using Docker
+                    🔧 Tech Stack: React, TypeScript, Vite, Testing Library, Tailwind CSS, and more
                   </p>
                 </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/ryotaro-tanaka/jobhuntx?tab=readme-ov-file#frontend"
+                >
+                  Details
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="./assets/diagram-frontend.png" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/diagram-frontend.png"
+                    />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-          <!-- /END Key Features & Technical Highlights -->
+          <!-- /END Backend Architecture -->
 
           <!-- Results & Learnings -->
           <div class="row">
@@ -289,13 +333,7 @@
                 <h3 class="project-wrapper__text-title">Results</h3>
                 <div>
                   <p class="mb-4">
-                    - The current features are still insufficient for fully solving my own challenge of "job hunting to obtain PR in Australia," and further improvements are needed.
-                  </p>
-                  <p class="mb-4">
-                    - Architectural planning during the design phase led to improved performance and maintainability.
-                  </p>
-                  <p class="mb-4">
-                    - I was able to showcase my full-stack development skills.
+                    If you're a recruiter—or someone who has connections with recruiters—and you're reading this, then I've already achieved half of my objective: showcasing my skills. As for the other half—supporting my own job search—the current version of JobHuntX only offers the basic features of a generic job board, so it's still insufficient. Unfortunately, it doesn't seem likely to fully solve my personal challenges at this time, but I plan to continue developing this app in the future for those who find themselves in the same situation as I do.
                   </p>
                 </div>
               </div>
@@ -349,6 +387,11 @@
 
         <hr />
 
+        <!--LAST_UPDATED-->
+        <div class="footer__last-updated text-center mb-2">
+          Last updated: 2025-06-05
+        </div>
+
         <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
         <p class="footer__text">
           © 2021 - Template developed by
@@ -357,29 +400,6 @@
           >
         </p>
 
-        <!-- TO DO: remove this entire paragraph once you finish your portfolio -->
-        <!-- <p class="mt-3 pt-3">
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio/fork"
-            data-icon="octicon-repo-forked"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Fork ntkme/github-buttons on GitHub"
-            >Fork</a
-          >
-          <a
-            rel="noreferrer" 
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star cobiwave/simplefolio on GitHub"
-            >Star</a
-          >
-        </p> -->
       </div>
     </footer>
     <!-- /END Footer Section -->
